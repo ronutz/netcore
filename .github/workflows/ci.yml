@@ -1,0 +1,54 @@
+# ============================================================================
+# .github/workflows/ci.yml
+# ----------------------------------------------------------------------------
+# CONTINUOUS INTEGRATION for @ronutz/netcore
+#
+# WHY: This file tells GitHub to automatically run our quality gates every time
+# code is pushed or a pull request is opened. It is the enforcement arm of the
+# Build Conformance Gate (Protocol v2.0 §10.13): the golden-vector correctness
+# gate (D-1) and the D-49 manifest lint run here, and a red result blocks merge
+# once branch protection requires these checks.
+#
+# It runs on GitHub's servers — you do not run it yourself. You will see green
+# checkmarks (or red X's) appear next to your commits on github.com.
+# ============================================================================
+
+name: CI
+
+# WHEN this runs: on every push to main, and on every pull request targeting main.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Test + correctness + manifest gates
+    runs-on: ubuntu-latest # GitHub provides a fresh Linux machine for each run.
+
+    steps:
+      # 1. Check out (download) the repository code onto the runner.
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      # 2. Install Node.js. netcore targets Node >=18; we test on the LTS line.
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # netcore is intentionally DEPENDENCY-FREE (no external npm packages), so
+      # there is nothing to `npm install`. We go straight to the gates.
+
+      # 3. The full test suite (also runs the gates internally).
+      - name: Run test suite
+        run: node test/run-tests.mjs
+
+      # 4. The golden-vector correctness gate, run standalone for a clear signal.
+      - name: Golden-vector gate (D-1)
+        run: node tools/ci/golden-vectors.mjs
+
+      # 5. The D-49 manifest lint, run standalone for a clear signal.
+      - name: D-49 manifest lint
+        run: node tools/ci/manifest-lint.mjs

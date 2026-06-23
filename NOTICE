@@ -1,0 +1,26 @@
+@ronutz/netcore
+Copyright 2026 Rodolfo Nützmann
+
+This product includes software developed as the open-core Engine of ronutz.com
+(codename ARSENAL).
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License in the accompanying LICENSE file or at:
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+
+------------------------------------------------------------------------------
+TRADEMARKS
+------------------------------------------------------------------------------
+"ronutz", "ARSENAL", "netcore", and "CONCORD" are names and marks associated
+with this project and its author. The Apache-2.0 license grants rights to the
+SOFTWARE; it does NOT grant any right to use these names or marks, or to imply
+endorsement, sponsorship, or affiliation, beyond the limited fair-use
+permissions of trademark law. Forks and derivative works must not use these
+names or marks in a way that suggests they are the official project.

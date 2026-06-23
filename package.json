@@ -1,0 +1,48 @@
+{
+  "//": "================================================================",
+  "//1": "@ronutz/netcore — THE ENGINE. Brand-blind computation + tool logic.",
+  "//2": "Public, Apache-2.0, open-core. The licensable asset of ronutz.com (ARSENAL).",
+  "//3": "This repo NEVER depends on any private repo (arsenal/concord) — the C-73",
+  "//4": "one-way boundary. Governed by CONCORD Protocol v2.0. D19: all code documented.",
+  "//5": "================================================================",
+  "name": "@ronutz/netcore",
+  "version": "0.1.0",
+  "description": "Brand-blind Engine: deterministic network/security/identity tools + the tool-module manifest contract.",
+  "type": "module",
+  "main": "src/index.mjs",
+  "exports": {
+    ".": "./src/index.mjs",
+    "./manifest-schema": "./src/manifest/schema.mjs",
+    "./tools/cidr": "./src/tools/cidr/index.mjs"
+  },
+  "files": [
+    "src",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "scripts": {
+    "//test": "Run the full test suite: golden vectors + manifest lint.",
+    "test": "node test/run-tests.mjs",
+    "ci:golden": "node tools/ci/golden-vectors.mjs",
+    "ci:manifest": "node tools/ci/manifest-lint.mjs"
+  },
+  "keywords": [
+    "networking",
+    "security",
+    "cidr",
+    "subnet",
+    "privacy",
+    "local-first",
+    "open-core"
+  ],
+  "author": "Rodolfo Nützmann",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ronutz/netcore.git"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

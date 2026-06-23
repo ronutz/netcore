@@ -1,0 +1,33 @@
+# ============================================================================
+# .gitignore — what Git should NOT track
+# WHY: keeps generated/local/OS files out of the repository so the history
+# stays clean and contributors don't accidentally commit machine-specific junk.
+# ============================================================================
+
+# Node dependencies — restored with `npm install`, never committed.
+node_modules/
+
+# npm/yarn debug + lock noise we don't need for a dependency-free package.
+npm-debug.log*
+yarn-error.log*
+
+# Build / coverage output (none yet, but reserve the slots).
+dist/
+coverage/
+*.tsbuildinfo
+
+# OS-generated files.
+# (Windows)
+Thumbs.db
+Desktop.ini
+# (macOS — in case a contributor is on a Mac)
+.DS_Store
+
+# Editor / IDE local settings.
+.vscode/
+.idea/
+*.swp
+
+# Environment files — secrets NEVER belong in git.
+.env
+.env.*
