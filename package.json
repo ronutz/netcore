@@ -42,6 +42,10 @@
     "type": "git",
     "url": "https://github.com/ronutz/netcore.git"
   },
+  "//6": "publishConfig: scoped packages (@ronutz/*) are RESTRICTED (private) by default on npm. access:public makes `npm publish` publish this openly (open-core, Apache-2.0) without needing the --access public flag each time.",
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=18"
   }
