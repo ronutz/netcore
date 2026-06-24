@@ -6,7 +6,7 @@
   "//4": "one-way boundary. Governed by CONCORD Protocol v2.0. D19: all code documented.",
   "//5": "================================================================",
   "name": "@ronutz/netcore",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Brand-blind Engine: deterministic network/security/identity tools + the tool-module manifest contract.",
   "type": "module",
   "main": "src/index.mjs",
